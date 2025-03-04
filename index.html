@@ -3,299 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnlyGP - Your Sasquatch Medical Professional</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <style>
-        /* Custom Cursor */
-        * {
-            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;'><path d='M20 1 L20 30 L1 15 L20 1'></path></svg>") 16 0, auto;
-        }
-
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f4f1ec;
-            color: #2c1810;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: #2c1810;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: space-around;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .nav-links a {
-            color: #f4f1ec;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #8b5e3c;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(rgba(44, 24, 16, 0.7), rgba(44, 24, 16, 0.7)),
-                        url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1920');
-            background-size: cover;
-            color: #f4f1ec;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.5s backwards;
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* About Section */
-        .about {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 2rem auto;
-            padding: 2rem;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .testimonial-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* FAQ Section */
-        .faq-item {
-            background: #fff;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .faq-question {
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-answer {
-            display: none;
-            padding-top: 1rem;
-        }
-
-        /* CTA Button */
-        .cta-button {
-            background-color: #8b5e3c;
-            color: #fff;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            background-color: #6b4423;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .nav-links a {
-                margin: 0.5rem 0;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+    <title>AI Dokter - Rijn en Duin MTVP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
+    <div class="welcome-screen">
+        <div class="welcome-content">
+            <i class="fas fa-stethoscope welcome-icon"></i>
+            <h1>Welkom bij AI Dokter</h1>
+            <p>Rijn en Duin MTVP's Digitale Gezondheidsadviseur</p>
+            <div class="forest-leaves">
+                <div class="leaf"></div>
+                <div class="leaf"></div>
+                <div class="leaf"></div>
+            </div>
         </div>
-    </nav>
+    </div>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Meet Dr. Sasquatch</h1>
-            <p>Your wilderness-trained GP, bringing healthcare to you from the depths of the forest</p>
-            <a href="#" class="cta-button">Join OnlyGP Today</a>
+    <div class="forest-overlay"></div>
+
+    <header>
+        <h1>AI Dokter <i class="fas fa-stethoscope"></i></h1>
+        <p class="subtitle">Rijn en Duin MTVP's Digitale Gezondheidsadviseur</p>
+    </header>
+
+    <main>
+        <div class="ai-doctor-container">
+            <div class="center-content">
+                <div class="zoom-screenshot">
+                    <img src="https://raw.githubusercontent.com/Burdivelam/dr_dialogue/main/rijnduin_ai.jpg" 
+                         alt="AI Doctor Zoom Call" 
+                         class="doctor-image">
+                </div>
+
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message ai">
+                            Welkom bij de AI Dokter van Rijn en Duin. Ik ben hier om u te helpen met uw gezondheid. 
+                            Hoe kan ik u vandaag van dienst zijn?
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="userInput" placeholder="Beschrijf uw klachten...">
+                        <button onclick="sendMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
 
-    <section id="about" class="about">
-        <h2>About Dr. Sasquatch</h2>
-        <p>With over 500 years of experience in forest medicine and modern healthcare, Dr. Sasquatch combines ancient wisdom with cutting-edge medical practices. Board-certified in both Human and Cryptid medicine, our gentle giant brings a unique perspective to your healthcare needs.</p>
-        <div class="credentials">
-            <h3>Credentials</h3>
-            <ul>
-                <li>MD from Himalayan Medical College</li>
-                <li>Fellowship in Forest Medicine</li>
-                <li>Board Certified in Cryptozoological Healthcare</li>
-                <li>Member of the American Association of Mysterious Practitioners</li>
-            </ul>
+        <div class="cta-section">
+            <h2>Krijg 24/7 Toegang tot AI Gezondheidszorg</h2>
+            <p>Word lid van ons exclusieve OnlyFans kanaal voor persoonlijk gezondheidsadvies</p>
+            <a href="https://onlyfans.com" class="cta-button" target="_blank">
+                <i class="fab fa-fan"></i> Abonneer op OnlyFans
+            </a>
         </div>
-    </section>
 
-    <section id="testimonials">
-        <h2>Patient Testimonials</h2>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-brain"></i>
+                <h3>AI Expertise</h3>
+                <p>Gecombineerde kennis van alle Rijn en Duin artsen</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-clock"></i>
+                <h3>24/7 Beschikbaar</h3>
+                <p>Directe toegang tot medisch advies</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Veilig & Vertrouwd</h3>
+                <p>Professionele en discrete zorg</p>
+            </div>
+        </div>
+
         <div class="testimonials">
-            <div class="testimonial-card">
-                <p>"I was skeptical at first, but Dr. Sasquatch's holistic approach to my chronic back pain was life-changing!"</p>
-                <p><em>- John D., Forest Ranger</em></p>
-            </div>
-            <div class="testimonial-card">
-                <p>"The most thorough check-up I've ever had. Plus, his big hands are surprisingly gentle!"</p>
-                <p><em>- Sarah M., Hiker</em></p>
-            </div>
-            <div class="testimonial-card">
-                <p>"Finally, a doctor who understands my allergies to modern life. His natural remedies actually work!"</p>
-                <p><em>- Mike R., City Dweller</em></p>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <div class="faq-question">
-                Is Dr. Sasquatch really a Sasquatch?
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                While we cannot confirm or deny the doctor's species, we can assure you that his medical credentials are impeccable.
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                How do virtual consultations work?
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Consultations are conducted via secure video call. Don't worry about the occasional forest background noise - it's part of the authentic experience!
+            <h2>Wat Onze Patiënten Zeggen</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"De AI dokter begreep direct mijn klachten. Het was alsof ik met een arts sprak die me al jaren kende. Zeer geruststellend!"</p>
+                        <div class="testimonial-author">- Lisa V., 34 jaar</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Midden in de nacht had ik zorgen over mijn gezondheid. De AI dokter was er voor mij met professioneel advies, precies wanneer ik het nodig had."</p>
+                        <div class="testimonial-author">- Marco B., 45 jaar</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Door de preventieve adviezen van de AI dokter heb ik mijn levensstijl aangepast. Ik voel me nu veel energieker!"</p>
+                        <div class="testimonial-author">- Sophie K., 28 jaar</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                What's included in the OnlyGP subscription?
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Subscribers get monthly virtual consultations, exclusive health tips, and access to Dr. Sasquatch's famous forest remedy recipes.
-            </div>
-        </div>
-    </section>
 
-    <section id="contact">
-        <h2>Book Your Consultation</h2>
-        <p>Ready to experience healthcare with a supernatural touch? Join OnlyGP today!</p>
-        <a href="#" class="cta-button">Subscribe Now</a>
-    </section>
+        <footer>
+            <p>© 2024 Rijn en Duin MTVP AI Dokter | Alle rechten voorbehouden</p>
+        </footer>
 
-    <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const answer = item.querySelector('.faq-answer');
-                const icon = item.querySelector('.fas');
-                
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-                icon.classList.toggle('fa-chevron-up');
-                icon.classList.toggle('fa-chevron-down');
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
